@@ -1,0 +1,40 @@
+HƯỚNG DẪN TRIỂN KHAI THỰC TẾ HỆ ĐIỀU HÀNH LƯỢNG TỬ
+=================================================
+
+1. YÊU CẦU PHẦN CỨNG:
+- Thiết bị: Raspberry Pi 4/5 hoặc tương đương
+- Bộ nhớ: Thẻ nhớ 16GB+ (Class 10)
+- Màn hình: Cảm ứng hỗ trợ độ phân giải 1080p
+- Cảm biến: Vân tay, camera nhận diện mống mắt
+
+2. CÁC BƯỚC TRIỂN KHAI:
+
+① TẠO USB CÀI ĐẶT:
+- Format USB sang định dạng FAT32
+- Copy file mobile_os_package.tar.gz vào USB
+- Giải nén trên thiết bị đích: 
+  tar -xzvf mobile_os_package.tar.gz
+
+② FLASH HỆ THỐNG:
+- Kết nối thẻ nhớ với máy tính
+- Chạy lệnh flash (đảm bảo chọn đúng thiết bị):
+  sudo ./flash_os.sh
+
+③ CẤU HÌNH BOOTLOADER:
+- Cài đặt U-Boot:
+  sudo apt install u-boot-tools
+- Cấu hình boot:
+  sudo u-boot-update
+
+3. KIỂM TRA SAU CÀI ĐẶT:
+- Khởi động lại thiết bị
+- Kiểm tra giao diện hologram
+- Thử nghiệm xác thực sinh trắc
+- Kiểm tra bảng điều khiển lượng tử
+
+4. XỬ LÝ LỖI THƯỜNG GẶP:
+- Lỗi boot: Kiểm tra file config.txt trên thẻ nhớ
+- Lỗi màn hình: Cập nhật driver display
+- Lỗi sinh trắc: Calibrate lại cảm biến
+
+HOTLINE HỖ TRỢ: 1800-1234 (24/7)
